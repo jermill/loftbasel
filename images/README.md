@@ -18,6 +18,7 @@ Hero section images - add 3 images here:
 Artist photos and artwork:
 - `featured-artist.jpg` - Main large featured artist image
 - `artist-1.jpg` through `artist-7.jpg` - Grid artist cards
+- `retail-city.jpg` - Retail & The City hero image you provided
 
 **Recommended sizes:**
 - Featured: 1200x1500px (portrait)
