@@ -17,15 +17,24 @@ const ticketButtons = document.querySelectorAll('.ticket-btn');
 ticketButtons.forEach(button => {
     button.addEventListener('click', function() {
         const ticket = this.closest('.ticket');
-        const ticketName = ticket.querySelector('.ticket-name').textContent;
-        const ticketPrice = ticket.querySelector('.ticket-price').textContent;
+        const ticketName = ticket.querySelector('.ticket-name').textContent.trim();
+        const ticketPrice = ticket.querySelector('.ticket-price').textContent.trim();
         
-        // Temporary alert - replace with actual ticketing system
-        alert(`Selected: ${ticketName}\nPrice: ${ticketPrice}\n\nTicketing system coming soon!`);
+        // Handle different ticket types
+        if (this.classList.contains('btn-rsvp')) {
+            // VIP RSVP - open email or contact form
+            window.location.href = 'mailto:info@theloftbasel.com?subject=VIP Inquiry RSVP&body=I would like to RSVP for VIP access to The Loft Basel.';
+        } else if (ticketPrice === 'FREE') {
+            // Free admission
+            alert(`${ticketName}\n\nFREE Entry!\n\nJust show up during event hours.\nSee you there!`);
+        } else {
+            // Paid ticket - would integrate with payment system
+            alert(`Selected: ${ticketName}\nPrice: ${ticketPrice}\n\nTicketing system coming soon!`);
+        }
         
         // Visual feedback
         const originalText = this.textContent;
-        this.textContent = 'SELECTED ✓';
+        this.textContent = ticketPrice === 'RSVP' ? 'SENT ✓' : 'SELECTED ✓';
         
         setTimeout(() => {
             this.textContent = originalText;
