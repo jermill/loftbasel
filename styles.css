@@ -80,6 +80,35 @@ body {
     opacity: 0.8 !important;
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background: var(--black);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
 /* Hero */
 .hero {
     min-height: 100vh;
@@ -754,11 +783,13 @@ body {
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .hero-title {
+    .hero-title,
+    .hero-artists .hero-title {
         font-size: clamp(4rem, 12vw, 8rem);
     }
     
-    .title-mid {
+    .title-mid,
+    .hero-artists .title-mid {
         margin-left: 4rem;
     }
     
@@ -769,7 +800,8 @@ body {
     .about-content,
     .artists-layout,
     .schedule-grid,
-    .tickets-grid {
+    .tickets-grid,
+    .spaces-grid {
         grid-template-columns: 1fr;
     }
     
@@ -780,25 +812,93 @@ body {
     .gallery-strip {
         grid-template-columns: repeat(3, 1fr);
     }
+    
+    .space-card {
+        margin-bottom: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    
     .nav-inner {
         padding: 1rem 1.5rem;
+        flex-wrap: wrap;
+        position: relative;
+    }
+    
+    .logo {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+    
+    .hamburger {
+        display: flex;
     }
     
     .nav-links {
-        gap: 1.5rem;
-        font-size: 0.85rem;
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--gray-mid);
+        margin-top: 1rem;
     }
     
-    .hero {
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links a {
+        font-size: 1rem;
+    }
+    
+    .tickets-btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .hero,
+    .hero-artists {
         padding: 100px 1.5rem 40px;
+        min-height: auto;
+    }
+    
+    .hero-label {
+        font-size: 0.75rem;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-title,
+    .hero-artists .hero-title {
+        font-size: clamp(3rem, 10vw, 5rem);
+        margin-bottom: 2rem;
+    }
+    
+    .title-mid,
+    .hero-artists .title-mid {
+        margin-left: 2rem;
+    }
+    
+    .title-bottom {
+        margin-left: 4rem;
     }
     
     .hero-meta {
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .meta-label {
+        font-size: 0.7rem;
+    }
+    
+    .meta-value {
+        font-size: 1.1rem;
     }
     
     .section-heading {
@@ -807,6 +907,7 @@ body {
     
     .about,
     .artists,
+    .event-spaces,
     .schedule,
     .tickets {
         padding: 80px 1.5rem;
@@ -814,18 +915,176 @@ body {
     
     .section-number {
         left: 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .large-text {
+        font-size: 1.25rem;
+    }
+    
+    .collaborators,
+    .feature-list li {
+        font-size: 1rem;
+    }
+    
+    .subsection-title {
+        font-size: 1.5rem;
+    }
+    
+    .closing-statement {
+        font-size: 1.1rem;
+    }
+    
+    .fusion-section,
+    .what-to-expect {
+        margin-top: 3rem;
+        padding-top: 2rem;
+    }
+    
+    .space-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .space-number {
+        font-size: 2rem;
+        top: 1rem;
+        right: 1rem;
+    }
+    
+    .space-title {
+        font-size: 1.5rem;
+        padding-right: 3rem;
+    }
+    
+    .space-subtitle {
+        font-size: 1rem;
     }
     
     .artists-grid {
         grid-template-columns: 1fr;
     }
     
+    .artist-feature {
+        aspect-ratio: 3/4;
+    }
+    
+    .artist-name {
+        font-size: 1.75rem;
+    }
+    
+    .artist-medium {
+        font-size: 0.9rem;
+    }
+    
     .gallery-strip {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .schedule-grid {
+        gap: 3rem;
+    }
+    
+    .day-title {
+        font-size: 2rem;
+    }
+    
+    .time {
+        font-size: 1.25rem;
+    }
+    
+    .schedule-item {
+        grid-template-columns: 80px 1fr;
+        gap: 1rem;
+    }
+    
+    .tickets-grid {
+        gap: 1.5rem;
+    }
+    
+    .ticket {
+        padding: 2rem 1.5rem;
+    }
+    
+    .ticket-name {
+        font-size: 1.75rem;
+    }
+    
+    .ticket-price {
+        font-size: 2.5rem;
     }
     
     .footer-content,
     .footer-links {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-logo {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1rem;
+    }
+    
+    .hero-title,
+    .hero-artists .hero-title {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+    }
+    
+    .title-mid,
+    .hero-artists .title-mid {
+        margin-left: 1rem;
+    }
+    
+    .title-bottom {
+        margin-left: 2rem;
+    }
+    
+    .section-heading {
+        font-size: clamp(2rem, 12vw, 3rem);
+    }
+    
+    .large-text {
+        font-size: 1.1rem;
+    }
+    
+    .about,
+    .artists,
+    .event-spaces,
+    .schedule,
+    .tickets {
+        padding: 60px 1rem;
+    }
+    
+    .space-features li {
+        font-size: 0.95rem;
+        padding-left: 1.25rem;
+    }
+    
+    .schedule-item {
+        grid-template-columns: 70px 1fr;
+        gap: 0.75rem;
+        padding-bottom: 1.5rem;
+    }
+    
+    .time {
+        font-size: 1.1rem;
+    }
+    
+    .schedule-details h4 {
+        font-size: 1.1rem;
+    }
+    
+    .ticket-badge {
+        font-size: 0.7rem;
+        padding: 0.4rem 1rem;
+    }
+    
+    .gallery-strip {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
     }
 }
