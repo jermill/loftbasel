@@ -3,350 +3,312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Loft Basel | Delaware's Premier Art Experience</title>
+    <title>The Loft Basel — Delaware's Art Weekend</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
+    <nav class="nav">
+        <div class="nav-inner">
             <div class="logo">THE LOFT BASEL</div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#artists">Artists</a></li>
-                <li><a href="#event">Event</a></li>
-                <li><a href="#tickets" class="cta-link">Get Tickets</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#artists">Artists</a>
+                <a href="#schedule">Schedule</a>
+                <a href="#tickets" class="tickets-btn">Tickets →</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-background"></div>
-        <div class="hero-content">
-            <div class="hero-badge">Delaware's Art Experience</div>
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-label">Delaware's Art Weekend</div>
             <h1 class="hero-title">
-                <span class="title-line">THE LOFT</span>
-                <span class="title-line highlight">BASEL</span>
+                <span class="title-top">THE</span>
+                <span class="title-mid">LOFT</span>
+                <span class="title-bottom">BASEL</span>
             </h1>
-            <p class="hero-subtitle">Where creativity meets culture. A celebration of art, innovation, and community.</p>
-            <div class="hero-dates">
-                <div class="date-card">
-                    <div class="date-day">DEC</div>
-                    <div class="date-number">20</div>
+            <div class="hero-meta">
+                <div class="meta-item">
+                    <span class="meta-label">DATES</span>
+                    <span class="meta-value">DEC 20—21</span>
                 </div>
-                <div class="date-separator">—</div>
-                <div class="date-card">
-                    <div class="date-day">DEC</div>
-                    <div class="date-number">21</div>
+                <div class="meta-item">
+                    <span class="meta-label">LOCATION</span>
+                    <span class="meta-value">THE LOFT · DE</span>
                 </div>
-            </div>
-            <div class="hero-cta">
-                <a href="#tickets" class="btn btn-primary">Get Your Tickets</a>
-                <a href="#artists" class="btn btn-secondary">Explore Artists</a>
+                <div class="meta-item">
+                    <span class="meta-label">ARTISTS</span>
+                    <span class="meta-value">50+ FEATURED</span>
+                </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
+        <div class="hero-image-grid">
+            <div class="hero-img placeholder-1"></div>
+            <div class="hero-img placeholder-2"></div>
+            <div class="hero-img placeholder-3"></div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-text">
-                    <h2 class="section-title">Art Meets Delaware</h2>
-                    <p class="lead">Inspired by Miami's iconic Art Basel, The Loft Basel brings a vibrant celebration of contemporary art and culture to Delaware.</p>
-                    <p>Experience two days of immersive art installations, live performances, and creative expression from local and regional artists. Join us for an unforgettable weekend where the art world converges in the heart of Delaware.</p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Featured Artists</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">2</div>
-                        <div class="stat-label">Days of Art</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">∞</div>
-                        <div class="stat-label">Creative Energy</div>
-                    </div>
-                </div>
+    <section id="about" class="about">
+        <div class="section-number">01</div>
+        <div class="about-content">
+            <h2 class="section-heading">
+                ART MEETS<br>
+                DELAWARE
+            </h2>
+            <div class="about-text">
+                <p class="large-text">Inspired by Miami's iconic Art Basel, The Loft Basel brings a vibrant celebration of contemporary art and culture to Delaware.</p>
+                <p>Two days of immersive art installations, live performances, and creative expression from local and regional artists. An unforgettable weekend where the art world converges in the heart of Delaware.</p>
             </div>
         </div>
     </section>
 
-    <!-- Artists Showcase -->
+    <!-- Artists Section -->
     <section id="artists" class="artists">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Featured Artists</h2>
-                <p class="section-subtitle">Discover the creative minds shaping Delaware's art scene</p>
+        <div class="artists-header">
+            <div class="section-number">02</div>
+            <h2 class="section-heading">FEATURED<br>ARTISTS</h2>
+        </div>
+        
+        <div class="artists-layout">
+            <!-- Large Featured Artist -->
+            <div class="artist-feature">
+                <div class="artist-feature-img placeholder-artist-1"></div>
+                <div class="artist-info-overlay">
+                    <h3 class="artist-name">Artist Name</h3>
+                    <p class="artist-medium">Mixed Media · Contemporary</p>
+                </div>
             </div>
+
+            <!-- Artist Grid -->
             <div class="artists-grid">
-                <!-- Artist Card 1 -->
                 <div class="artist-card">
-                    <div class="artist-image placeholder-image">
-                        <div class="artist-overlay">
-                            <button class="view-work-btn">View Work</button>
-                        </div>
-                    </div>
-                    <div class="artist-info">
-                        <h3 class="artist-name">Artist Name</h3>
-                        <p class="artist-medium">Mixed Media</p>
+                    <div class="artist-card-img placeholder-artist-2"></div>
+                    <div class="artist-card-info">
+                        <h4>Artist Name</h4>
+                        <p>Digital Art</p>
                     </div>
                 </div>
-                <!-- Artist Card 2 -->
                 <div class="artist-card">
-                    <div class="artist-image placeholder-image">
-                        <div class="artist-overlay">
-                            <button class="view-work-btn">View Work</button>
-                        </div>
-                    </div>
-                    <div class="artist-info">
-                        <h3 class="artist-name">Artist Name</h3>
-                        <p class="artist-medium">Contemporary Sculpture</p>
+                    <div class="artist-card-img placeholder-artist-3"></div>
+                    <div class="artist-card-info">
+                        <h4>Artist Name</h4>
+                        <p>Sculpture</p>
                     </div>
                 </div>
-                <!-- Artist Card 3 -->
                 <div class="artist-card">
-                    <div class="artist-image placeholder-image">
-                        <div class="artist-overlay">
-                            <button class="view-work-btn">View Work</button>
-                        </div>
-                    </div>
-                    <div class="artist-info">
-                        <h3 class="artist-name">Artist Name</h3>
-                        <p class="artist-medium">Digital Art</p>
+                    <div class="artist-card-img placeholder-artist-4"></div>
+                    <div class="artist-card-info">
+                        <h4>Artist Name</h4>
+                        <p>Photography</p>
                     </div>
                 </div>
-                <!-- Artist Card 4 -->
                 <div class="artist-card">
-                    <div class="artist-image placeholder-image">
-                        <div class="artist-overlay">
-                            <button class="view-work-btn">View Work</button>
-                        </div>
-                    </div>
-                    <div class="artist-info">
-                        <h3 class="artist-name">Artist Name</h3>
-                        <p class="artist-medium">Abstract Painting</p>
+                    <div class="artist-card-img placeholder-artist-5"></div>
+                    <div class="artist-card-info">
+                        <h4>Artist Name</h4>
+                        <p>Abstract</p>
                     </div>
                 </div>
-                <!-- Artist Card 5 -->
                 <div class="artist-card">
-                    <div class="artist-image placeholder-image">
-                        <div class="artist-overlay">
-                            <button class="view-work-btn">View Work</button>
-                        </div>
-                    </div>
-                    <div class="artist-info">
-                        <h3 class="artist-name">Artist Name</h3>
-                        <p class="artist-medium">Photography</p>
+                    <div class="artist-card-img placeholder-artist-6"></div>
+                    <div class="artist-card-info">
+                        <h4>Artist Name</h4>
+                        <p>Installation</p>
                     </div>
                 </div>
-                <!-- Artist Card 6 -->
                 <div class="artist-card">
-                    <div class="artist-image placeholder-image">
-                        <div class="artist-overlay">
-                            <button class="view-work-btn">View Work</button>
+                    <div class="artist-card-img placeholder-artist-7"></div>
+                    <div class="artist-card-info">
+                        <h4>Artist Name</h4>
+                        <p>Painting</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Row -->
+        <div class="gallery-strip">
+            <div class="gallery-item placeholder-gallery-1"></div>
+            <div class="gallery-item placeholder-gallery-2"></div>
+            <div class="gallery-item placeholder-gallery-3"></div>
+            <div class="gallery-item placeholder-gallery-4"></div>
+            <div class="gallery-item placeholder-gallery-5"></div>
+            <div class="gallery-item placeholder-gallery-6"></div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="schedule">
+        <div class="section-number">03</div>
+        <h2 class="section-heading">EVENT<br>SCHEDULE</h2>
+        
+        <div class="schedule-grid">
+            <div class="schedule-day">
+                <div class="day-header">
+                    <h3 class="day-title">FRIDAY</h3>
+                    <p class="day-date">December 20, 2024</p>
+                </div>
+                <div class="schedule-items">
+                    <div class="schedule-item">
+                        <span class="time">18:00</span>
+                        <div class="schedule-details">
+                            <h4>Doors Open</h4>
+                            <p>VIP early access & gallery preview</p>
                         </div>
                     </div>
-                    <div class="artist-info">
-                        <h3 class="artist-name">Artist Name</h3>
-                        <p class="artist-medium">Installation Art</p>
+                    <div class="schedule-item">
+                        <span class="time">19:00</span>
+                        <div class="schedule-details">
+                            <h4>General Admission</h4>
+                            <p>Full gallery access begins</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="time">20:30</span>
+                        <div class="schedule-details">
+                            <h4>Live Performance</h4>
+                            <p>Musical acts & art demonstrations</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="time">23:00</span>
+                        <div class="schedule-details">
+                            <h4>Evening Close</h4>
+                            <p>Day one concludes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="schedule-day">
+                <div class="day-header">
+                    <h3 class="day-title">SATURDAY</h3>
+                    <p class="day-date">December 21, 2024</p>
+                </div>
+                <div class="schedule-items">
+                    <div class="schedule-item">
+                        <span class="time">14:00</span>
+                        <div class="schedule-details">
+                            <h4>Doors Open</h4>
+                            <p>Afternoon gallery sessions begin</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="time">16:00</span>
+                        <div class="schedule-details">
+                            <h4>Artist Talks</h4>
+                            <p>Meet the artists & Q&A sessions</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="time">18:00</span>
+                        <div class="schedule-details">
+                            <h4>Closing Reception</h4>
+                            <p>Final performances & networking</p>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="time">22:00</span>
+                        <div class="schedule-details">
+                            <h4>Event Close</h4>
+                            <p>Weekend concludes</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Event Details -->
-    <section id="event" class="event-details">
-        <div class="container">
-            <div class="event-grid">
-                <div class="event-info">
-                    <h2 class="section-title">Event Details</h2>
-                    <div class="event-item">
-                        <div class="event-icon">📅</div>
-                        <div class="event-content">
-                            <h3>Dates</h3>
-                            <p>December 20-21, 2024</p>
-                            <p class="event-subtext">Friday & Saturday</p>
-                        </div>
-                    </div>
-                    <div class="event-item">
-                        <div class="event-icon">⏰</div>
-                        <div class="event-content">
-                            <h3>Hours</h3>
-                            <p>Friday: 6:00 PM - 11:00 PM</p>
-                            <p>Saturday: 2:00 PM - 10:00 PM</p>
-                        </div>
-                    </div>
-                    <div class="event-item">
-                        <div class="event-icon">📍</div>
-                        <div class="event-content">
-                            <h3>Location</h3>
-                            <p>The Loft</p>
-                            <p class="event-subtext">Delaware</p>
-                        </div>
-                    </div>
-                    <div class="event-item">
-                        <div class="event-icon">🎨</div>
-                        <div class="event-content">
-                            <h3>Experience</h3>
-                            <p>Curated art exhibitions, live performances, networking, and exclusive installations</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="event-highlights">
-                    <h3 class="highlights-title">What to Expect</h3>
-                    <ul class="highlights-list">
-                        <li>
-                            <span class="highlight-icon">✦</span>
-                            <span>Curated exhibitions from 50+ artists</span>
-                        </li>
-                        <li>
-                            <span class="highlight-icon">✦</span>
-                            <span>Live art demonstrations & performances</span>
-                        </li>
-                        <li>
-                            <span class="highlight-icon">✦</span>
-                            <span>Interactive installations</span>
-                        </li>
-                        <li>
-                            <span class="highlight-icon">✦</span>
-                            <span>Music & entertainment</span>
-                        </li>
-                        <li>
-                            <span class="highlight-icon">✦</span>
-                            <span>Food & beverage experiences</span>
-                        </li>
-                        <li>
-                            <span class="highlight-icon">✦</span>
-                            <span>Networking with artists & collectors</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ticketing Section -->
+    <!-- Tickets Section -->
     <section id="tickets" class="tickets">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get Your Tickets</h2>
-                <p class="section-subtitle">Choose your experience</p>
+        <div class="section-number">04</div>
+        <h2 class="section-heading">GET<br>TICKETS</h2>
+        
+        <div class="tickets-grid">
+            <div class="ticket">
+                <div class="ticket-header">
+                    <h3 class="ticket-name">GENERAL<br>ADMISSION</h3>
+                    <div class="ticket-price">$25</div>
+                </div>
+                <ul class="ticket-features">
+                    <li>Access to all exhibitions</li>
+                    <li>General gallery viewing</li>
+                    <li>Live performances</li>
+                    <li>1 complimentary drink</li>
+                </ul>
+                <button class="ticket-btn">SELECT →</button>
             </div>
-            <div class="tickets-grid">
-                <!-- General Admission -->
-                <div class="ticket-card">
-                    <div class="ticket-header">
-                        <h3 class="ticket-title">General Admission</h3>
-                        <div class="ticket-price">
-                            <span class="price">$25</span>
-                            <span class="price-period">per day</span>
-                        </div>
-                    </div>
-                    <ul class="ticket-features">
-                        <li>Access to all exhibitions</li>
-                        <li>General gallery viewing</li>
-                        <li>Live performances</li>
-                        <li>1 complimentary drink</li>
-                    </ul>
-                    <button class="btn btn-ticket">Select Ticket</button>
+
+            <div class="ticket ticket-featured">
+                <div class="ticket-badge">MOST POPULAR</div>
+                <div class="ticket-header">
+                    <h3 class="ticket-name">WEEKEND<br>PASS</h3>
+                    <div class="ticket-price">$40</div>
                 </div>
-                
-                <!-- Weekend Pass -->
-                <div class="ticket-card featured">
-                    <div class="ticket-badge">Most Popular</div>
-                    <div class="ticket-header">
-                        <h3 class="ticket-title">Weekend Pass</h3>
-                        <div class="ticket-price">
-                            <span class="price">$40</span>
-                            <span class="price-period">both days</span>
-                        </div>
-                    </div>
-                    <ul class="ticket-features">
-                        <li>2-day access to all exhibitions</li>
-                        <li>Priority gallery viewing</li>
-                        <li>All live performances</li>
-                        <li>3 complimentary drinks</li>
-                        <li>Artist meet & greet access</li>
-                    </ul>
-                    <button class="btn btn-ticket btn-featured">Select Ticket</button>
+                <ul class="ticket-features">
+                    <li>2-day access to all exhibitions</li>
+                    <li>Priority gallery viewing</li>
+                    <li>All live performances</li>
+                    <li>3 complimentary drinks</li>
+                    <li>Artist meet & greet access</li>
+                </ul>
+                <button class="ticket-btn">SELECT →</button>
+            </div>
+
+            <div class="ticket">
+                <div class="ticket-header">
+                    <h3 class="ticket-name">VIP<br>EXPERIENCE</h3>
+                    <div class="ticket-price">$75</div>
                 </div>
-                
-                <!-- VIP Experience -->
-                <div class="ticket-card">
-                    <div class="ticket-header">
-                        <h3 class="ticket-title">VIP Experience</h3>
-                        <div class="ticket-price">
-                            <span class="price">$75</span>
-                            <span class="price-period">weekend</span>
-                        </div>
-                    </div>
-                    <ul class="ticket-features">
-                        <li>All Weekend Pass benefits</li>
-                        <li>Early access (1 hour)</li>
-                        <li>VIP lounge access</li>
-                        <li>Unlimited drinks & food</li>
-                        <li>Private artist sessions</li>
-                        <li>Exclusive merchandise</li>
-                    </ul>
-                    <button class="btn btn-ticket">Select Ticket</button>
-                </div>
+                <ul class="ticket-features">
+                    <li>All Weekend Pass benefits</li>
+                    <li>Early access (1 hour)</li>
+                    <li>VIP lounge access</li>
+                    <li>Unlimited drinks & food</li>
+                    <li>Private artist sessions</li>
+                    <li>Exclusive merchandise</li>
+                </ul>
+                <button class="ticket-btn">SELECT →</button>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>THE LOFT BASEL</h3>
-                    <p>Delaware's Premier Art Experience</p>
+        <div class="footer-content">
+            <div class="footer-main">
+                <h3 class="footer-logo">THE LOFT BASEL</h3>
+                <p class="footer-tagline">Delaware's Premier Art Experience</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <a href="#about">About</a>
+                    <a href="#artists">Artists</a>
+                    <a href="#schedule">Schedule</a>
+                    <a href="#tickets">Tickets</a>
                 </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#artists">Artists</a></li>
-                            <li><a href="#event">Event</a></li>
-                            <li><a href="#tickets">Tickets</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Connect</h4>
-                        <ul>
-                            <li><a href="#">Instagram</a></li>
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">Facebook</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">Email</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 The Loft Basel. All rights reserved.</p>
-            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 The Loft Basel. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-

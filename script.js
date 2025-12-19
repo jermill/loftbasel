@@ -1,21 +1,4 @@
-// Mobile Navigation Toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    hamburger.classList.toggle('active');
-});
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
-    });
-});
-
-// Smooth scrolling for navigation links
+// Smooth scroll for navigation
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -29,31 +12,50 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar background on scroll
-const navbar = document.querySelector('.navbar');
+// Ticket button interactions
+const ticketButtons = document.querySelectorAll('.ticket-btn');
+ticketButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const ticket = this.closest('.ticket');
+        const ticketName = ticket.querySelector('.ticket-name').textContent;
+        const ticketPrice = ticket.querySelector('.ticket-price').textContent;
+        
+        // Temporary alert - replace with actual ticketing system
+        alert(`Selected: ${ticketName}\nPrice: ${ticketPrice}\n\nTicketing system coming soon!`);
+        
+        // Visual feedback
+        const originalText = this.textContent;
+        this.textContent = 'SELECTED ✓';
+        
+        setTimeout(() => {
+            this.textContent = originalText;
+        }, 2000);
+    });
+});
+
+// Scroll-based navigation styling
 let lastScroll = 0;
+const nav = document.querySelector('.nav');
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
     if (currentScroll > 100) {
-        navbar.style.background = 'rgba(10, 10, 10, 0.98)';
-        navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.5)';
+        nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
     } else {
-        navbar.style.background = 'rgba(10, 10, 10, 0.95)';
-        navbar.style.boxShadow = 'none';
+        nav.style.boxShadow = 'none';
     }
     
     lastScroll = currentScroll;
 });
 
-// Animate elements on scroll
+// Intersection Observer for fade-in animations
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px -100px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
+const fadeInObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
@@ -62,131 +64,72 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Elements to animate on scroll
-const animateElements = document.querySelectorAll('.artist-card, .stat-card, .event-item, .ticket-card');
-animateElements.forEach(el => {
+// Observe elements for animation
+document.querySelectorAll('.artist-card, .schedule-day, .ticket, .gallery-item').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
-    el.style.transition = 'all 0.6s ease-out';
-    observer.observe(el);
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    fadeInObserver.observe(el);
 });
 
-// Ticket selection functionality
-const ticketButtons = document.querySelectorAll('.btn-ticket');
-ticketButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        const ticketCard = this.closest('.ticket-card');
-        const ticketTitle = ticketCard.querySelector('.ticket-title').textContent;
-        const ticketPrice = ticketCard.querySelector('.price').textContent;
-        
-        // Create a simple modal/alert for now
-        // In production, this would integrate with a ticketing system
-        alert(`You selected: ${ticketTitle}\nPrice: ${ticketPrice}\n\nTicketing system coming soon!`);
-        
-        // Add a visual feedback
-        this.textContent = 'Selected!';
-        this.style.background = 'var(--gradient-1)';
-        this.style.border = 'none';
-        
-        setTimeout(() => {
-            this.textContent = 'Select Ticket';
-            this.style.background = '';
-            this.style.border = '';
-        }, 2000);
-    });
-});
-
-// Artist card interactions
-const artistCards = document.querySelectorAll('.artist-card');
-artistCards.forEach(card => {
-    const viewBtn = card.querySelector('.view-work-btn');
-    
-    if (viewBtn) {
-        viewBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const artistName = card.querySelector('.artist-name').textContent;
-            // This would open a modal or navigate to artist page in production
-            console.log(`Viewing work by ${artistName}`);
-        });
-    }
-});
-
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const heroBackground = document.querySelector('.hero-background');
-    
-    if (heroBackground) {
-        heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
-
-// Add active state to navigation based on scroll position
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
-        if (pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Countdown timer (optional - for added engagement)
-function updateCountdown() {
-    const eventDate = new Date('December 20, 2024 18:00:00').getTime();
-    const now = new Date().getTime();
-    const distance = eventDate - now;
-    
-    if (distance > 0) {
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        
-        // You can add a countdown display element to show this
-        console.log(`Event starts in: ${days}d ${hours}h ${minutes}m`);
-    }
-}
-
-// Update countdown every minute
-setInterval(updateCountdown, 60000);
-updateCountdown();
-
-// Add loading animation
+// Page load animation
 window.addEventListener('load', () => {
     document.body.style.opacity = '0';
     setTimeout(() => {
-        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.transition = 'opacity 0.4s ease';
         document.body.style.opacity = '1';
     }, 100);
 });
 
-// Easter egg: Konami code for fun
-let konamiCode = [];
-const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+// Active nav link based on scroll position
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
 
-document.addEventListener('keydown', (e) => {
-    konamiCode.push(e.key);
-    konamiCode = konamiCode.slice(-10);
+function highlightNavigation() {
+    const scrollPosition = window.scrollY + 200;
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+                link.style.fontWeight = '500';
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                    link.style.fontWeight = '700';
+                }
+            });
+        }
+    });
+}
+
+window.addEventListener('scroll', highlightNavigation);
+
+// Hover effects for artist cards
+document.querySelectorAll('.artist-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-8px)';
+        this.style.transition = 'transform 0.3s ease';
+    });
     
-    if (konamiCode.join('') === konamiSequence.join('')) {
-        document.body.style.animation = 'rainbow 2s linear infinite';
-        setTimeout(() => {
-            document.body.style.animation = '';
-        }, 5000);
-    }
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+    });
 });
 
+// Gallery strip hover effect
+document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.05)';
+        this.style.transition = 'transform 0.3s ease';
+        this.style.zIndex = '10';
+    });
+    
+    item.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+        this.style.zIndex = '1';
+    });
+});
+
+console.log('The Loft Basel — Site loaded successfully');
