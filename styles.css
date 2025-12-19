@@ -225,6 +225,123 @@ body {
     line-height: 1.4;
 }
 
+.collaborators {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.fusion-section,
+.what-to-expect {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 2px solid var(--black);
+}
+
+.subsection-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+}
+
+.feature-list {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+
+.feature-list li {
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.closing-statement {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-top: 2rem;
+    font-style: italic;
+}
+
+/* Event Spaces Section */
+.event-spaces {
+    padding: 120px 3rem;
+    max-width: 1600px;
+    margin: 0 auto;
+    border-top: 2px solid var(--black);
+    position: relative;
+}
+
+.spaces-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.space-card {
+    border: 2px solid var(--black);
+    padding: 2.5rem;
+    background: var(--white);
+    position: relative;
+}
+
+.space-card.space-featured {
+    background: var(--gray-light);
+}
+
+.space-number {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--gray-mid);
+    line-height: 1;
+}
+
+.space-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.space-floor {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+}
+
+.space-subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--gray-dark);
+}
+
+.space-features {
+    list-style: none;
+    padding: 0;
+}
+
+.space-features li {
+    margin-bottom: 0.875rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.space-features li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    font-weight: 600;
+}
+
 /* Artists Section */
 .artists {
     padding: 120px 3rem;
