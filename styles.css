@@ -234,6 +234,37 @@ body {
     position: relative;
 }
 
+/* Hero Artists - When artists section is the hero */
+.hero-artists {
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-bottom: 60px;
+    border-top: none;
+}
+
+.hero-artists .artists-header {
+    margin-bottom: 4rem;
+}
+
+.hero-artists .hero-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(5rem, 15vw, 12rem);
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-artists .title-top {
+    display: block;
+}
+
+.hero-artists .title-mid {
+    display: block;
+    margin-left: 8rem;
+}
+
 .artists-header {
     margin-bottom: 4rem;
 }
@@ -496,13 +527,6 @@ body {
     font-family: monospace;
 }
 
-.ticket-price::after {
-    content: ' / day';
-    font-size: 1rem;
-    font-weight: 400;
-    font-family: 'Space Grotesk', sans-serif;
-}
-
 .ticket-features {
     list-style: none;
     flex-grow: 1;
@@ -540,6 +564,18 @@ body {
 .ticket-featured .ticket-btn:hover {
     background: var(--white);
     color: var(--black);
+}
+
+.btn-rsvp {
+    background: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+}
+
+.btn-rsvp:hover {
+    background: var(--white);
+    color: var(--black);
+    border-color: var(--black);
 }
 
 /* Footer */
